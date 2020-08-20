@@ -17,7 +17,7 @@ capture a response from your origin, and pass it through ggf. in three lines:
 ```js
 import ϟ from 'ggf'
 addEventListener('fetch', event => event.respondWith(handler(event)))
-const handler = async ({ request }) => ϟ(await fetch(request))
+const handler = ({ request }) => ϟ(fetch(request))
 ```
 
 and a longer sample:
@@ -25,8 +25,8 @@ and a longer sample:
 ```js
 import ggf from 'ggf'
 addEventListener('fetch', event => event.respondWith(handler(event)))
-const handler = async ({ request }) => {
-  const resp = await fetch(request)
+const handler = ({ request }) => {
+  const resp = fetch(request)
   return ggf(resp)
 }
 ```

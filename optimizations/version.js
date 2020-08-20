@@ -1,4 +1,4 @@
-const VERSION = "0.0.1";
+const VERSION = "0.0.2";
 
 export default () => ({
   element: (element) => {

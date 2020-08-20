@@ -24,7 +24,11 @@ const optimizations = {
   versionMetaTag: ["head", VersionMetaTag],
 };
 
-const gottaGoFast = (resp, config = {}) => {
+const gottaGoFast = async (response, config = {}) => {
+  // Wrap in promise and resolve so responses or promises
+  // that _resolve_ to responses can be passed in
+  const resp = await Promise.resolve(response);
+
   // Assign defaults from `defaultConfig` but let config
   // overwrite them
   const conf = Object.assign({}, defaultConfig, config);
