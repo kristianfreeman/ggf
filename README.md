@@ -2,6 +2,8 @@
 
 a set of tools for speeding up websites using common optimizations. designed for cloudflare workers (and probably won't work with anything else).
 
+![demo](./.github/demo.png)
+
 ## installation
 
 ```sh
