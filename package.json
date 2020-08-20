@@ -1,0 +1,19 @@
+{
+  "name": "ggf",
+  "version": "0.0.1",
+  "description": "gotta go fast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"noop\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/signalnerve/ggf.git"
+  },
+  "author": "Kristian Freeman <signalnerve@hey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/signalnerve/ggf/issues"
+  },
+  "homepage": "https://github.com/signalnerve/ggf#readme"
+}
