@@ -10,9 +10,8 @@ export default (options = {}) => ({
 
     if (options && options.except && options.except.length) {
       const skip = options.except.find((except) => src.includes(except));
-      if (!skip) defer();
-    } else {
-      defer();
+      if (skip) return;
     }
+    defer();
   },
 });
