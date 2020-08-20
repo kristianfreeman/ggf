@@ -33,7 +33,7 @@ const handler = async ({ request }) => {
 
 ## configuration
 
-every optimization in GGF can be turned off (and some can be fine-tuned) by passing in a configuration option as the second argument to the function. by default, everyo
+every optimization in GGF can be turned off (and some can be fine-tuned) by passing in a configuration option as the second argument to the function.
 
 ```js
 // ...
@@ -46,7 +46,7 @@ ggf(resp, {
 
 ### defer scripts
 
-resource-blocking scripts that cause high TTI can be blocked using the `deferScripts` configuration. this optimization can break sites, so it **disabled by default**.
+resource-blocking scripts that cause high TTI can be blocked using the `deferScripts` configuration. this optimization can break sites, so it **disabled by default**. to enable:
 
 ```js
 ggf(resp, {
