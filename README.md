@@ -20,7 +20,7 @@ addEventListener('fetch', event => event.respondWith(handler(event)))
 const handler = ({ request }) => ϟ(fetch(request))
 ```
 
-and a longer sample:
+don't worry, if you don't like unicode in your code, you can import as `ggf` :)
 
 ```js
 import ggf from 'ggf'
