@@ -1,5 +1,7 @@
 # ggf
 
+[![npm version](https://badge.fury.io/js/ggf.svg)](https://badge.fury.io/js/ggf)
+
 a set of tools for speeding up websites using common optimizations. designed for cloudflare workers (and probably won't work with anything else).
 
 ![demo](./.github/demo.png)
@@ -15,20 +17,20 @@ $ npm i ggf
 capture a response from your origin, and pass it through ggf. in three lines:
 
 ```js
-import ϟ from 'ggf'
-addEventListener('fetch', event => event.respondWith(handler(event)))
-const handler = ({ request }) => ϟ(fetch(request))
+import ϟ from "ggf";
+addEventListener("fetch", (event) => event.respondWith(handler(event)));
+const handler = ({ request }) => ϟ(fetch(request));
 ```
 
 don't worry, if you don't like unicode in your code, you can import as `ggf` :)
 
 ```js
-import ggf from 'ggf'
-addEventListener('fetch', event => event.respondWith(handler(event)))
+import ggf from "ggf";
+addEventListener("fetch", (event) => event.respondWith(handler(event)));
 const handler = ({ request }) => {
-  const resp = fetch(request)
-  return ggf(resp)
-}
+  const resp = fetch(request);
+  return ggf(resp);
+};
 ```
 
 ## configuration
@@ -41,7 +43,7 @@ ggf(resp, {
   // deferScripts (defaults to false)
   // lazyLoadImages (defaults to true)
   // version (defaults to true)
-})
+});
 ```
 
 ### defer scripts
@@ -50,8 +52,8 @@ resource-blocking scripts that cause high TTI can be blocked using the `deferScr
 
 ```js
 ggf(resp, {
-  deferScripts: true
-})
+  deferScripts: true,
+});
 ```
 
 you may find that some scripts should not be deferred in order for your site to render correctly. to configure this, pass in an object to `deferScripts`, including the `options.except` array:
@@ -61,16 +63,19 @@ ggf(resp, {
   deferScripts: {
     enabled: true,
     options: {
-      except: ["/assets/js/app.min.js"]
-    }
-  }
-})
+      except: ["/assets/js/app.min.js"],
+    },
+  },
+});
 ```
 
 you can also _skip_ scripts at the origin, by adding the data attribute `ggf-skip` to a `script` tag, as seen below:
 
 ```html
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" data-ggf-skip="true"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  data-ggf-skip="true"
+></script>
 ```
 
 currently, scripts are excepted using a very basic `.includes()` check in the `script src` attribute. this probably doesn't work for everyone (and probably has some edge-cases), please feel free to submit a PR if you'd like to improve that behavior!
@@ -81,8 +86,8 @@ using the `lazy` attribute, images are automatically lazy loaded and don't block
 
 ```js
 ggf(resp, {
-  lazyLoadImages: false
-})
+  lazyLoadImages: false,
+});
 ```
 
 ### version
@@ -91,8 +96,8 @@ as a sanity check to ensure that the code is working, ggf will add a `meta` tag 
 
 ```js
 ggf(resp, {
-  versionMetaTag: false
-})
+  versionMetaTag: false,
+});
 ```
 
 ＧＯＴＴＡ ＧＯ ＦＡＳＴ
