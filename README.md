@@ -67,6 +67,12 @@ ggf(resp, {
 })
 ```
 
+you can also _skip_ scripts at the origin, by adding the data attribute `ggf-skip` to a `script` tag, as seen below:
+
+```html
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" data-ggf-skip="true"></script>
+```
+
 currently, scripts are excepted using a very basic `.includes()` check in the `script src` attribute. this probably doesn't work for everyone (and probably has some edge-cases), please feel free to submit a PR if you'd like to improve that behavior!
 
 ### lazy load images

@@ -3,6 +3,9 @@ export default (options = {}) => ({
     const src = element.getAttribute("src");
     if (!src) return;
 
+    const skipDirective = element.getAttribute("data-ggf-skip");
+    if (skipDirective) return;
+
     const defer = () => {
       element.setAttribute("async", "true");
       element.setAttribute("defer", "true");
